@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de alunos</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            
+            <nav>
+                <a href="{% url 'cadastro_aluno' %}">Cadastrar aluno</a>
+                <a href="{% url 'lista_alunos' %}">Listar alunos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <h2>Lista de alunos cadastrados</h2>
+            <ul class="aluno-list">
+                {% for aluno in alunos %}
+                <li class="aluno-item">
+                    <span class="aluno-nome">{{ aluno.nome }}</span> |
+                    <span class="aluno-curso">{{ aluno.curso }}</span> |
+                    <span class="aluno-cidade">{{ aluno.cidade }}</span> |
+                    <span class="aluno-endereco">{{ aluno.endereco }}</span> |
+                    <span class="aluno-email">{{ aluno.email }}</span> 
+                </li>
+                {% empty %}
+                <li>Nenhum aluno cadastrado.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

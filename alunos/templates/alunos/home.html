@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de matrícula</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            
+            <nav>
+                <a href="{% url 'cadastro_aluno' %}">Cadastrar aluno</a>
+                <a href="{% url 'lista_alunos' %}">Listar alunos</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="content-container">
+            <h2>Sistema de Matrícula</h2>
+            <p>Você pode cadastrar novos alunos ou visualizar a lista de alunos cadastrados.</p>
+        </div>
+    </main>
+    <footer>
+        <p>Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
